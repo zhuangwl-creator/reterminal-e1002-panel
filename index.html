@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E1002 A股面板</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="device-shell" aria-label="reTerminal E1002 A股面板预览">
+      <section class="panel" id="panel">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">A股观察</div>
+            <h1>交易日面板</h1>
+          </div>
+          <div class="clock-block">
+            <time id="dateText">--</time>
+            <strong id="timeText">--:--</strong>
+          </div>
+        </header>
+
+        <section class="market-grid">
+          <article class="index-panel">
+            <div class="section-title">上证指数</div>
+            <div class="index-value" id="indexValue">--</div>
+            <div class="change-row" id="indexChange">--</div>
+            <div class="sparkline" aria-hidden="true" id="indexSparkline"></div>
+            <div class="analysis-box">
+              <div class="analysis-label">盘面结论</div>
+              <p id="marketSummary">--</p>
+            </div>
+          </article>
+
+          <article class="stocks-panel">
+            <div class="section-title">自选股</div>
+            <div class="stock-list" id="stockList"></div>
+          </article>
+
+          <aside class="side-panel">
+            <section class="weather-panel">
+              <div class="section-title">天气</div>
+              <div class="weather-main">
+                <span id="weatherIcon">晴</span>
+                <strong id="weatherTemp">--</strong>
+              </div>
+              <div class="weather-meta" id="weatherMeta">--</div>
+            </section>
+
+            <section class="advice-panel">
+              <div class="section-title">今日动作</div>
+              <ul id="adviceList"></ul>
+            </section>
+
+            <section class="status-panel">
+              <div>
+                <span>刷新</span>
+                <strong id="refreshText">--</strong>
+              </div>
+              <div>
+                <span>模式</span>
+                <strong>低频</strong>
+              </div>
+            </section>
+          </aside>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

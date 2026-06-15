@@ -1,0 +1,71 @@
+name: refresh-panel
+
+# 触发：手动 / 改前端时 push / 交易时段定时
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'styles.css'
+      - 'app.js'
+      - 'scripts/**'
+      - 'config/panel.json'
+      - '.github/workflows/refresh.yml'
+  schedule:
+    # 以下均为 UTC，北京 = UTC+8。GitHub cron 可能延迟数分钟到数十分钟，看板场景可接受。
+    - cron: '30 0 * * 1-5'       # 北京 08:30 盘前
+    - cron: '*/15 1-3 * * 1-5'   # 北京 09:00-11:59 上午盘（覆盖 09:25-11:35）
+    - cron: '*/15 5-7 * * 1-5'   # 北京 13:00-15:59 下午盘（覆盖 12:55-15:10）
+    - cron: '22 7 * * 1-5'       # 北京 15:22 盘后
+
+permissions:
+  contents: write
+
+# 避免多个刷新任务并发部署冲突
+concurrency:
+  group: refresh-panel
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 记录 fetch 前 updatedAt
+        id: before
+        run: |
+          echo "value=$(python3 -c 'import json;print(json.load(open("data/market.json"))["updatedAt"])')" >> $GITHUB_OUTPUT
+
+      - name: 抓取行情 + 天气
+        run: python3 scripts/fetch_market.py
+
+      - name: 记录 fetch 后 updatedAt
+        id: after
+        run: |
+          echo "value=$(python3 -c 'import json;print(json.load(open("data/market.json"))["updatedAt"])')" >> $GITHUB_OUTPUT
+
+      # 关键：仅当 fetch 真正更新了数据（updatedAt 变化）才打包+部署。
+      # fetch 全失败时 fetch_market.py 会保留 market.json 不覆盖，updatedAt 不变 → 跳过部署，
+      # 设备继续显示 gh-pages 上最后一次成功的数据，而非回退到初始样例。
+      - name: 打包 dist
+        if: steps.before.outputs.value != steps.after.outputs.value
+        run: python3 scripts/build_dist.py
+
+      - name: 部署到 GitHub Pages（gh-pages 分支）
+        if: steps.before.outputs.value != steps.after.outputs.value
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+
+      - name: 抓取失败提示
+        if: steps.before.outputs.value == steps.after.outputs.value
+        run: |
+          echo "::warning::行情获取失败（可能海外 IP 受限），跳过本次部署，设备继续显示上次成功的数据。"
+          echo "排查：进 Actions 日志看 fetch 步骤的新浪/东财报错；若海外持续拿不到，考虑切国内云（见 README）。"
