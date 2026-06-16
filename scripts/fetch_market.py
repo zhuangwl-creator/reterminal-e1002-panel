@@ -279,8 +279,205 @@ def load_last_market():
     return None
 
 
+# ---------- 美股时段（北京 22:00–次日 09:00）----------
+def is_us_window():
+    """北京时间 22:00 至次日 09:00 为美股时段。"""
+    hour = datetime.now(TZ).hour
+    return hour >= 22 or hour < 9
+
+
+def us_ticker(symbol):
+    """gb_aapl → AAPL；gb_$ixic → IXIC（去 gb_ 与 $ 前缀并大写）。"""
+    raw = symbol[3:] if symbol.startswith("gb_") else symbol
+    return raw.lstrip("$").upper()
+
+
+def build_us_quote(symbol, name, price, prev_close, open_price, high, low, volume, amount, quote_time):
+    """美股报价构造：与 build_quote 相同的 key 集合，code 用原始 ticker（无 .SH/.SZ 后缀）。"""
+    price = to_float(price)
+    prev_close = to_float(prev_close)
+    change = price - prev_close
+    change_pct = change / prev_close * 100 if prev_close else 0
+    return {
+        "name": name,
+        "code": us_ticker(symbol),
+        "price": round(price, 2),
+        "change": round(change, 2),
+        "changePct": round(change_pct, 2),
+        "open": round(to_float(open_price), 2),
+        "high": round(to_float(high), 2),
+        "low": round(to_float(low), 2),
+        "volume": int(to_float(volume)),
+        "amount": round(to_float(amount), 2),
+        "trend": trend_label(price, to_float(open_price), prev_close),
+        "risk": "相对强" if change_pct >= 1 else "观察",
+        "quoteTime": quote_time,
+    }
+
+
+def quote_looks_ok_us(q, is_index):
+    """美股合理性校验：区间比 A 股宽（个股价格上限高，涨跌幅容忍 ±30%）。"""
+    pct = q["changePct"]
+    if not (-30 < pct < 30):
+        return False
+    price = q["price"]
+    if is_index:
+        return 1000 < price < 50000
+    return 0.5 < price < 100000
+
+
+def fetch_sina_us_all(symbols, names):
+    """新浪美股（gb_ 前缀，gbk + Referer）。返回 {symbol: quote_dict}。"""
+    headers = {"Referer": "https://finance.sina.com.cn/", "User-Agent": DEFAULT_UA}
+    text = fetch_text(f"{SINA_URL}{','.join(symbols)}", encoding="gbk", headers=headers)
+    raw = parse_sina_quotes(text)
+    result = {}
+    for sym in symbols:
+        fields = raw.get(sym)
+        # 美股字段：0=名称 1=现价 2=涨跌幅 4=涨跌额 5=今开 6=最高 7=最低 10=成交量 11=成交额 26=昨收
+        if fields and len(fields) >= 27 and fields[1]:
+            name = names.get(sym) or fields[0] or us_ticker(sym)
+            result[sym] = build_us_quote(
+                sym, name, fields[1], fields[26], fields[5], fields[6], fields[7],
+                fields[10], fields[11], now_iso())
+    return result
+
+
+def em_us_secid(symbol):
+    """美股东财 secid：105=纳斯达克，106=纽交所。"""
+    ticker = us_ticker(symbol)
+    market = "106" if ticker in {"KO", "SPCX"} else "105"
+    return f"{market}.{ticker}"
+
+
+def fetch_eastmoney_us_all(symbols, names):
+    """东财美股（备源）。f43 直接为美元价，不除 100（与 A 股不同）。"""
+    headers = {"User-Agent": DEFAULT_UA, "Referer": "https://quote.eastmoney.com/"}
+    fields = "f43,f44,f45,f46,f47,f48,f57,f58,f60"
+    result = {}
+    for sym in symbols:
+        try:
+            data = fetch_json(
+                f"{EM_REALTIME_URL}?secid={em_us_secid(sym)}&fields={fields}&fltt=2",
+                headers=headers).get("data") or {}
+            if data.get("f43") in (None, "", 0):
+                continue
+            # f43=现价 f44=最高 f45=最低 f46=今开 f47=成交量 f48=成交额 f58=名称 f60=昨收
+            name = names.get(sym) or data.get("f58") or us_ticker(sym)
+            result[sym] = build_us_quote(
+                sym, name, data["f43"], data.get("f60"), data.get("f46"),
+                data.get("f44"), data.get("f45"), data.get("f47"), data.get("f48"), now_iso())
+        except Exception:
+            continue
+    return result
+
+
+def fetch_series_us(secid="100.NDX", limit=48):
+    """美股指数分时折线（东财 trends2，纳斯达克 100.NDX）。失败返回空数组。"""
+    headers = {"User-Agent": DEFAULT_UA, "Referer": "https://quote.eastmoney.com/"}
+    params = {
+        "secid": secid,
+        "fields1": "f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13",
+        "fields2": "f51,f52,f53,f54,f55,f56,f57,f58",
+        "ndays": "1",
+        "iscr": "0",
+    }
+    data = fetch_json(f"{EM_TRENDS_URL}?{urlencode(params)}", headers=headers).get("data") or {}
+    trends = data.get("trends") or []
+    points = []
+    for item in trends:
+        parts = item.split(",")
+        if len(parts) >= 2:
+            points.append(round(to_float(parts[1]), 2))
+    return points[-limit:] if points else []
+
+
+def fetch_us(config):
+    """美股时段主流程：新浪（主）→ 东财（备）→ 保留上次（兜底）。输出与 A 股同结构 payload。"""
+    us = config.get("us", {})
+    names = us.get("names", {})
+    symbols = [us.get("index", "gb_$ixic")]
+    symbols.extend(us.get("stocks", []))
+    index_symbol = symbols[0]
+
+    quotes = {}
+    source = None
+
+    # 主源：新浪美股
+    try:
+        sina = fetch_sina_us_all(symbols, names)
+        if index_symbol in sina and all(s in sina for s in symbols):
+            quotes = sina
+            source = "Sina Finance 美股 hq.sinajs.cn"
+    except Exception as exc:
+        print(f"sina us failed: {exc}", file=sys.stderr)
+
+    # 备源：东方财富美股
+    if not source:
+        try:
+            em = fetch_eastmoney_us_all(symbols, names)
+            if index_symbol in em and all(s in em for s in symbols):
+                if all(quote_looks_ok_us(em[s], s == index_symbol) for s in symbols):
+                    quotes = em
+                    source = "Eastmoney 美股 push2.eastmoney.com"
+                else:
+                    print("eastmoney us data failed sanity check", file=sys.stderr)
+        except Exception as exc:
+            print(f"eastmoney us failed: {exc}", file=sys.stderr)
+
+    # 兜底：全失败则保留上次数据
+    if not source:
+        last = load_last_market()
+        if last:
+            print("All US sources failed; keeping last market.json", file=sys.stderr)
+            return
+        raise RuntimeError("美股行情获取失败且无历史缓存")
+
+    index = quotes[index_symbol]
+    index["trend"] = market_trend(index)
+    index["volumeTone"] = amount_tone(index["amount"])
+
+    stocks = [quotes[s] for s in symbols[1:]]
+    for stock in stocks:
+        relative = stock["changePct"] - index["changePct"]
+        stock["risk"] = "强于指数" if relative >= 1 else ("弱于指数" if relative <= -1 else "跟随指数")
+
+    # 分时折线：拿不到就空数组（前端隐藏 sparkline）
+    try:
+        index["series"] = fetch_series_us()
+    except Exception as exc:
+        print(f"us series failed: {exc}", file=sys.stderr)
+        index["series"] = []
+
+    try:
+        weather = fetch_weather(config)
+    except Exception as exc:
+        weather = fallback_weather(config)
+        weather["error"] = str(exc)
+
+    payload = {
+        "updatedAt": now_iso(),
+        "source": {"market": source, "weather": "Open-Meteo"},
+        "index": index,
+        "stocks": stocks,
+        "weather": weather,
+        "ui": {"eyebrow": "美股观察"},
+    }
+
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with OUTPUT_PATH.open("w", encoding="utf-8") as file:
+        json.dump(payload, file, ensure_ascii=False, indent=2)
+        file.write("\n")
+
+    print(f"Wrote {OUTPUT_PATH}")
+    print(f"Source: {source} | {len(stocks)} stocks | series pts: {len(index.get('series', []))}")
+
+
 def main():
     config = load_config()
+    if is_us_window():
+        fetch_us(config)
+        return
     symbols = [market_symbol(config.get("index", "sh000001"))]
     symbols.extend(market_symbol(code) for code in config.get("stocks", []))
     index_symbol = symbols[0]
@@ -346,6 +543,7 @@ def main():
         "index": index,
         "stocks": stocks,
         "weather": weather,
+        "ui": {"eyebrow": "A股观察"},
     }
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)

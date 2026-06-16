@@ -6,5 +6,19 @@
     "city": "深圳",
     "latitude": 22.5431,
     "longitude": 114.0579
+  },
+  "us": {
+    "index": "gb_$ixic",
+    "stocks": ["gb_spcx", "gb_aapl", "gb_goog", "gb_tsla", "gb_msft", "gb_avgo", "gb_ko"],
+    "names": {
+      "gb_$ixic": "纳斯达克指数",
+      "gb_spcx": "SPCX",
+      "gb_aapl": "苹果",
+      "gb_goog": "谷歌",
+      "gb_tsla": "特斯拉",
+      "gb_msft": "微软",
+      "gb_avgo": "博通",
+      "gb_ko": "可口可乐"
+    }
   }
 }

@@ -111,6 +111,8 @@ function renderAdvice(data) {
 
 function render(data) {
   state.market = data;
+  document.querySelector("#indexTitle").textContent = data.index.name;
+  document.querySelector("#eyebrow").textContent = (data.ui && data.ui.eyebrow) || "行情观察";
   document.querySelector("#indexValue").textContent = data.index.price.toFixed(2);
   document.querySelector("#indexChange").className = `change-row ${toneClass(data.index.change)}`;
   document.querySelector("#indexChange").textContent = `${formatSigned(data.index.change)} / ${formatSigned(data.index.changePct, "%")}`;
