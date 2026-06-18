@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T17:24:12+08:00",
+  "updatedAt": "2026-06-18T17:30:34+08:00",
   "source": {
     "market": "Sina Finance hq.sinajs.cn",
     "weather": "Open-Meteo"
@@ -102,7 +102,7 @@
     "city": "深圳",
     "condition": "雷雨",
     "temperature": 27,
-    "humidity": 90,
+    "humidity": 92,
     "wind": "南风 13km/h"
   },
   "ui": {
