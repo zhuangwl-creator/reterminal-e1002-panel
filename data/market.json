@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-25T17:30:35+08:00",
+  "updatedAt": "2026-06-25T18:00:37+08:00",
   "source": {
     "market": "Sina Finance hq.sinajs.cn",
     "weather": "Open-Meteo"
@@ -80,7 +80,7 @@
       "amount": 294759421.93,
       "trend": "盘中偏强",
       "risk": "强于指数",
-      "quoteTime": "2026-06-25T15:36:00+08:00"
+      "quoteTime": "2026-06-25T16:29:00+08:00"
     },
     {
       "name": "伊利股份",
@@ -102,7 +102,7 @@
     "city": "深圳",
     "condition": "雷雨",
     "temperature": 30,
-    "humidity": 79,
+    "humidity": 80,
     "wind": "西南风 5km/h"
   },
   "ui": {
