@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T15:00:37+08:00",
+  "updatedAt": "2026-06-30T15:30:32+08:00",
   "source": {
     "market": "Sina Finance hq.sinajs.cn",
     "weather": "Open-Meteo"
@@ -17,7 +17,7 @@
     "amount": 1530325961725.0,
     "trend": "窄幅震荡",
     "risk": "观察",
-    "quoteTime": "2026-06-30T15:00:31+08:00",
+    "quoteTime": "2026-06-30T15:30:24+08:00",
     "volumeTone": "成交额约15303亿",
     "series": [
       4079.99,
@@ -129,7 +129,7 @@
       "amount": 266429400.4,
       "trend": "盘中偏弱",
       "risk": "弱于指数",
-      "quoteTime": "2026-06-30T15:00:00+08:00"
+      "quoteTime": "2026-06-30T15:30:00+08:00"
     },
     {
       "name": "伊利股份",
@@ -151,7 +151,7 @@
     "city": "深圳",
     "condition": "小雨",
     "temperature": 31,
-    "humidity": 63,
+    "humidity": 64,
     "wind": "南风 12km/h"
   },
   "ui": {
