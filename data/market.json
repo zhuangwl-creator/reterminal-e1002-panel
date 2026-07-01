@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T11:30:35+08:00",
+  "updatedAt": "2026-07-01T12:00:39+08:00",
   "source": {
     "market": "Sina Finance hq.sinajs.cn",
     "weather": "Open-Meteo"
@@ -17,7 +17,7 @@
     "amount": 1112037073072.0,
     "trend": "指数偏强",
     "risk": "相对强",
-    "quoteTime": "2026-07-01T11:30:00+08:00",
+    "quoteTime": "2026-07-01T12:00:21+08:00",
     "volumeTone": "成交额约11120亿",
     "series": [
       4114.97,
@@ -152,7 +152,7 @@
     "condition": "阴",
     "temperature": 32,
     "humidity": 60,
-    "wind": "东南风 10km/h"
+    "wind": "东南风 11km/h"
   },
   "ui": {
     "eyebrow": "A股观察"
