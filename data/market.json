@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-05T11:30:42+08:00",
+  "updatedAt": "2026-08-05T11:42:39+08:00",
   "source": {
     "market": "Sina Finance hq.sinajs.cn",
     "weather": "Open-Meteo"
@@ -17,7 +17,7 @@
     "amount": 765150138581.0,
     "trend": "指数偏强",
     "risk": "相对强",
-    "quoteTime": "2026-08-05T11:30:30+08:00",
+    "quoteTime": "2026-08-05T11:35:57+08:00",
     "volumeTone": "成交额约7652亿",
     "series": [
       3854.59,
