@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-17T16:00:47+08:00",
+  "updatedAt": "2026-08-17T16:03:46+08:00",
   "source": {
     "market": "Sina Finance hq.sinajs.cn",
     "weather": "Open-Meteo"
@@ -100,10 +100,11 @@
   ],
   "weather": {
     "city": "深圳",
-    "condition": "雷雨",
-    "temperature": 28,
-    "humidity": 89,
-    "wind": "东风 7km/h"
+    "condition": "天气",
+    "temperature": 0,
+    "humidity": 0,
+    "wind": "待更新",
+    "error": "HTTP Error 429: Too Many Requests"
   },
   "ui": {
     "eyebrow": "A股观察"
