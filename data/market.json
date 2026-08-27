@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-28T02:19:24+08:00",
+  "updatedAt": "2026-08-28T02:30:38+08:00",
   "source": {
     "market": "Sina Finance 美股 hq.sinajs.cn",
     "weather": "Open-Meteo"
@@ -7,17 +7,17 @@
   "index": {
     "name": "纳斯达克指数",
     "code": "IXIC",
-    "price": 26462.37,
-    "change": 332.17,
-    "changePct": 1.27,
+    "price": 26427.26,
+    "change": 297.06,
+    "changePct": 1.14,
     "open": 26356.98,
     "high": 26553.9,
     "low": 26273.87,
-    "volume": 4369287294,
+    "volume": 4465177147,
     "amount": 6358639138.0,
     "trend": "指数偏强",
     "risk": "相对强",
-    "quoteTime": "2026-08-28T02:19:23+08:00",
+    "quoteTime": "2026-08-28T02:30:36+08:00",
     "volumeTone": "成交额约64亿",
     "series": []
   },
@@ -25,47 +25,47 @@
     {
       "name": "SPCX",
       "code": "SPCX",
-      "price": 140.47,
-      "change": 0.84,
-      "changePct": 0.6,
+      "price": 140.23,
+      "change": 0.6,
+      "changePct": 0.43,
       "open": 139.99,
       "high": 142.06,
       "low": 138.6,
-      "volume": 41332288,
+      "volume": 42307720,
       "amount": 86775278.0,
       "trend": "盘中偏强",
       "risk": "跟随指数",
-      "quoteTime": "2026-08-28T02:19:23+08:00"
+      "quoteTime": "2026-08-28T02:30:36+08:00"
     },
     {
       "name": "苹果",
       "code": "AAPL",
-      "price": 314.38,
-      "change": 0.93,
-      "changePct": 0.3,
+      "price": 314.11,
+      "change": 0.66,
+      "changePct": 0.21,
       "open": 310.55,
       "high": 315.4,
       "low": 309.4,
-      "volume": 17389342,
+      "volume": 17682007,
       "amount": 39308171.0,
       "trend": "盘中偏强",
       "risk": "跟随指数",
-      "quoteTime": "2026-08-28T02:19:23+08:00"
+      "quoteTime": "2026-08-28T02:30:36+08:00"
     },
     {
       "name": "谷歌",
       "code": "GOOG",
-      "price": 337.71,
-      "change": -1.39,
-      "changePct": -0.41,
+      "price": 337.56,
+      "change": -1.54,
+      "changePct": -0.45,
       "open": 336.3,
       "high": 338.81,
       "low": 335.4,
-      "volume": 6880293,
+      "volume": 6993327,
       "amount": 14237474.0,
       "trend": "绿盘震荡",
       "risk": "弱于指数",
-      "quoteTime": "2026-08-28T02:19:23+08:00"
+      "quoteTime": "2026-08-28T02:30:36+08:00"
     },
     {
       "name": "特斯拉",
@@ -76,56 +76,56 @@
       "open": 346.15,
       "high": 355.62,
       "low": 345.45,
-      "volume": 20279629,
+      "volume": 20658804,
       "amount": 35848276.0,
       "trend": "盘中偏强",
       "risk": "强于指数",
-      "quoteTime": "2026-08-28T02:19:23+08:00"
+      "quoteTime": "2026-08-28T02:30:36+08:00"
     },
     {
       "name": "微软",
       "code": "MSFT",
-      "price": 501.56,
-      "change": 5.19,
-      "changePct": 1.05,
+      "price": 502.48,
+      "change": 6.11,
+      "changePct": 1.23,
       "open": 494.88,
       "high": 505.99,
       "low": 490.08,
-      "volume": 15186880,
+      "volume": 15521786,
       "amount": 21298173.0,
       "trend": "盘中偏强",
       "risk": "跟随指数",
-      "quoteTime": "2026-08-28T02:19:23+08:00"
+      "quoteTime": "2026-08-28T02:30:36+08:00"
     },
     {
       "name": "博通",
       "code": "AVGO",
-      "price": 367.7,
-      "change": 12.11,
-      "changePct": 3.41,
+      "price": 367.28,
+      "change": 11.69,
+      "changePct": 3.29,
       "open": 361.79,
       "high": 370.47,
       "low": 360.61,
-      "volume": 11425379,
+      "volume": 11614403,
       "amount": 21540106.0,
       "trend": "盘中偏强",
       "risk": "强于指数",
-      "quoteTime": "2026-08-28T02:19:23+08:00"
+      "quoteTime": "2026-08-28T02:30:36+08:00"
     },
     {
       "name": "可口可乐",
       "code": "KO",
-      "price": 89.67,
-      "change": -0.41,
-      "changePct": -0.46,
+      "price": 89.66,
+      "change": -0.42,
+      "changePct": -0.47,
       "open": 89.41,
       "high": 90.03,
       "low": 88.95,
-      "volume": 5475470,
+      "volume": 5572274,
       "amount": 13426874.0,
       "trend": "绿盘震荡",
       "risk": "弱于指数",
-      "quoteTime": "2026-08-28T02:19:23+08:00"
+      "quoteTime": "2026-08-28T02:30:36+08:00"
     }
   ],
   "weather": {
@@ -133,7 +133,7 @@
     "condition": "小雨",
     "temperature": 26,
     "humidity": 97,
-    "wind": "南风 7km/h"
+    "wind": "西南风 7km/h"
   },
   "ui": {
     "eyebrow": "美股观察"
