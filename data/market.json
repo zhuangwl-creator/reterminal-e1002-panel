@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-04T18:00:50+08:00",
+  "updatedAt": "2026-09-04T18:30:39+08:00",
   "source": {
     "market": "Sina Finance hq.sinajs.cn",
     "weather": "Open-Meteo"
@@ -100,10 +100,10 @@
   ],
   "weather": {
     "city": "深圳",
-    "condition": "少云",
-    "temperature": 28,
-    "humidity": 74,
-    "wind": "西风 8km/h"
+    "condition": "多云",
+    "temperature": 27,
+    "humidity": 77,
+    "wind": "西风 7km/h"
   },
   "ui": {
     "eyebrow": "A股观察"
