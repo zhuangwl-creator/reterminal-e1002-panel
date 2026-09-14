@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-14T12:30:44+08:00",
+  "updatedAt": "2026-09-14T13:00:51+08:00",
   "source": {
     "market": "Sina Finance hq.sinajs.cn",
     "weather": "Open-Meteo"
@@ -7,20 +7,19 @@
   "index": {
     "name": "上证指数",
     "code": "000001.SH",
-    "price": 3894.28,
-    "change": 6.17,
-    "changePct": 0.16,
+    "price": 3890.95,
+    "change": 2.84,
+    "changePct": 0.07,
     "open": 3867.02,
     "high": 3895.51,
     "low": 3867.02,
-    "volume": 312361615,
-    "amount": 526345052523.0,
+    "volume": 315458366,
+    "amount": 532028726902.0,
     "trend": "窄幅震荡",
     "risk": "观察",
-    "quoteTime": "2026-09-14T11:35:57+08:00",
-    "volumeTone": "成交额约5263亿",
+    "quoteTime": "2026-09-14T13:00:47+08:00",
+    "volumeTone": "成交额约5320亿",
     "series": [
-      3890.46,
       3889.81,
       3888.69,
       3888.09,
@@ -67,7 +66,8 @@
       3894.53,
       3894.37,
       3894.49,
-      3894.58
+      3894.58,
+      3894.56
     ]
   },
   "stocks": [
@@ -80,71 +80,71 @@
       "open": 7.07,
       "high": 7.13,
       "low": 7.05,
-      "volume": 8845309,
-      "amount": 62699658.44,
+      "volume": 8902409,
+      "amount": 63103900.44,
       "trend": "盘中偏强",
       "risk": "跟随指数",
-      "quoteTime": "2026-09-14T11:30:00+08:00"
+      "quoteTime": "2026-09-14T13:00:48+08:00"
     },
     {
       "name": "华润三九",
       "code": "000999.SZ",
-      "price": 24.04,
-      "change": 0.15,
-      "changePct": 0.63,
+      "price": 24.12,
+      "change": 0.23,
+      "changePct": 0.96,
       "open": 23.89,
       "high": 24.2,
       "low": 23.86,
-      "volume": 3972700,
-      "amount": 95576959.71,
+      "volume": 4042200,
+      "amount": 97249376.71,
       "trend": "盘中偏强",
       "risk": "跟随指数",
-      "quoteTime": "2026-09-14T11:30:00+08:00"
+      "quoteTime": "2026-09-14T13:00:48+08:00"
     },
     {
       "name": "光启技术",
       "code": "002625.SZ",
-      "price": 26.71,
-      "change": -0.21,
-      "changePct": -0.78,
+      "price": 26.68,
+      "change": -0.24,
+      "changePct": -0.89,
       "open": 26.9,
       "high": 26.98,
       "low": 26.31,
-      "volume": 9267971,
-      "amount": 246878594.9,
+      "volume": 9362471,
+      "amount": 249401931.9,
       "trend": "盘中偏弱",
       "risk": "跟随指数",
-      "quoteTime": "2026-09-14T11:30:00+08:00"
+      "quoteTime": "2026-09-14T13:00:45+08:00"
     },
     {
       "name": "迅游科技",
       "code": "300467.SZ",
-      "price": 32.91,
-      "change": 0.85,
-      "changePct": 2.65,
+      "price": 32.81,
+      "change": 0.75,
+      "changePct": 2.34,
       "open": 32.0,
       "high": 33.1,
       "low": 31.84,
-      "volume": 1502600,
-      "amount": 49027008.0,
+      "volume": 1516200,
+      "amount": 49473882.0,
       "trend": "盘中偏强",
       "risk": "强于指数",
-      "quoteTime": "2026-09-14T11:30:00+08:00"
+      "quoteTime": "2026-09-14T13:00:42+08:00"
     },
     {
       "name": "伊利股份",
       "code": "600887.SH",
-      "price": 26.81,
-      "change": 0.15,
-      "changePct": 0.56,
+      "price": 26.82,
+      "change": 0.16,
+      "changePct": 0.6,
       "open": 26.62,
       "high": 26.93,
       "low": 26.51,
-      "volume": 34982251,
-      "amount": 937275209.0,
+      "volume": 35257051,
+      "amount": 944642757.0,
       "trend": "盘中偏强",
       "risk": "跟随指数",
-      "quoteTime": "2026-09-14T11:30:00+08:00"
+      "quoteTime": "2026-09-14T13:00:46+08:00"
     }
   ],
   "weather": {
@@ -152,7 +152,7 @@
     "condition": "阴",
     "temperature": 32,
     "humidity": 61,
-    "wind": "北风 6km/h"
+    "wind": "北风 5km/h"
   },
   "ui": {
     "eyebrow": "A股观察"
