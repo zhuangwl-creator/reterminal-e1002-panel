@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-06T09:00:52+08:00",
+  "updatedAt": "2026-10-06T09:30:41+08:00",
   "source": {
     "market": "Sina Finance hq.sinajs.cn",
     "weather": "Open-Meteo"
@@ -150,8 +150,8 @@
   "weather": {
     "city": "深圳",
     "condition": "少云",
-    "temperature": 21,
-    "humidity": 70,
+    "temperature": 22,
+    "humidity": 68,
     "wind": "东北风 13km/h"
   },
   "ui": {
