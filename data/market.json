@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T11:30:38+08:00",
+  "updatedAt": "2026-10-26T12:00:44+08:00",
   "source": {
     "market": "Sina Finance hq.sinajs.cn",
     "weather": "Open-Meteo"
@@ -17,7 +17,7 @@
     "amount": 454109740766.0,
     "trend": "窄幅震荡",
     "risk": "观察",
-    "quoteTime": "2026-10-26T11:30:30+08:00",
+    "quoteTime": "2026-10-26T11:35:57+08:00",
     "volumeTone": "成交额约4541亿",
     "series": [
       3672.09,
@@ -149,10 +149,10 @@
   ],
   "weather": {
     "city": "深圳",
-    "condition": "多云",
+    "condition": "少云",
     "temperature": 30,
-    "humidity": 45,
-    "wind": "东风 9km/h"
+    "humidity": 43,
+    "wind": "东风 8km/h"
   },
   "ui": {
     "eyebrow": "A股观察"
