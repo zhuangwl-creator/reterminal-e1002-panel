@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T23:00:53+08:00",
+  "updatedAt": "2026-10-28T23:30:40+08:00",
   "source": {
     "market": "Sina Finance 美股 hq.sinajs.cn",
     "weather": "Open-Meteo"
@@ -7,17 +7,17 @@
   "index": {
     "name": "纳斯达克指数",
     "code": "IXIC",
-    "price": 26446.45,
-    "change": -31.36,
-    "changePct": -0.12,
+    "price": 26465.39,
+    "change": -12.42,
+    "changePct": -0.05,
     "open": 26541.61,
     "high": 26582.01,
     "low": 26428.26,
-    "volume": 2549676553,
+    "volume": 2937842995,
     "amount": 6891619492.0,
     "trend": "窄幅震荡",
     "risk": "观察",
-    "quoteTime": "2026-10-28T23:00:51+08:00",
+    "quoteTime": "2026-10-28T23:30:38+08:00",
     "volumeTone": "成交额约69亿",
     "series": []
   },
@@ -25,107 +25,107 @@
     {
       "name": "SPCX",
       "code": "SPCX",
-      "price": 144.06,
-      "change": -4.52,
-      "changePct": -3.04,
+      "price": 144.48,
+      "change": -4.1,
+      "changePct": -2.76,
       "open": 147.37,
       "high": 148.2,
       "low": 142.13,
-      "volume": 45032083,
+      "volume": 49769063,
       "amount": 117723199.0,
       "trend": "盘中偏弱",
       "risk": "弱于指数",
-      "quoteTime": "2026-10-28T23:00:51+08:00"
+      "quoteTime": "2026-10-28T23:30:38+08:00"
     },
     {
       "name": "苹果",
       "code": "AAPL",
-      "price": 345.57,
-      "change": -1.53,
-      "changePct": -0.44,
+      "price": 345.51,
+      "change": -1.59,
+      "changePct": -0.46,
       "open": 346.92,
       "high": 347.18,
       "low": 344.57,
-      "volume": 6779823,
+      "volume": 8001385,
       "amount": 42497963.0,
       "trend": "盘中偏弱",
       "risk": "跟随指数",
-      "quoteTime": "2026-10-28T23:00:51+08:00"
+      "quoteTime": "2026-10-28T23:30:38+08:00"
     },
     {
       "name": "谷歌",
       "code": "GOOG",
-      "price": 319.95,
-      "change": 3.12,
-      "changePct": 0.98,
+      "price": 320.16,
+      "change": 3.33,
+      "changePct": 1.05,
       "open": 319.88,
       "high": 322.6,
       "low": 319.68,
-      "volume": 5923143,
+      "volume": 6663008,
       "amount": 16710732.0,
       "trend": "盘中偏强",
       "risk": "强于指数",
-      "quoteTime": "2026-10-28T23:00:51+08:00"
+      "quoteTime": "2026-10-28T23:30:38+08:00"
     },
     {
       "name": "特斯拉",
       "code": "TSLA",
-      "price": 400.97,
-      "change": -6.49,
-      "changePct": -1.59,
+      "price": 402.4,
+      "change": -5.06,
+      "changePct": -1.24,
       "open": 410.15,
       "high": 410.85,
       "low": 397.18,
-      "volume": 16284295,
+      "volume": 18761555,
       "amount": 42441117.0,
       "trend": "盘中偏弱",
       "risk": "弱于指数",
-      "quoteTime": "2026-10-28T23:00:51+08:00"
+      "quoteTime": "2026-10-28T23:30:38+08:00"
     },
     {
       "name": "微软",
       "code": "MSFT",
-      "price": 528.01,
-      "change": -3.32,
-      "changePct": -0.62,
+      "price": 528.27,
+      "change": -3.06,
+      "changePct": -0.58,
       "open": 531.82,
       "high": 534.57,
       "low": 527.66,
-      "volume": 4427378,
+      "volume": 5161500,
       "amount": 19133265.0,
       "trend": "盘中偏弱",
       "risk": "跟随指数",
-      "quoteTime": "2026-10-28T23:00:51+08:00"
+      "quoteTime": "2026-10-28T23:30:38+08:00"
     },
     {
       "name": "博通",
       "code": "AVGO",
-      "price": 344.69,
-      "change": 2.36,
-      "changePct": 0.69,
+      "price": 345.71,
+      "change": 3.38,
+      "changePct": 0.99,
       "open": 349.22,
       "high": 351.62,
       "low": 344.35,
-      "volume": 5362446,
+      "volume": 6246184,
       "amount": 22022544.0,
       "trend": "红盘震荡",
-      "risk": "跟随指数",
-      "quoteTime": "2026-10-28T23:00:51+08:00"
+      "risk": "强于指数",
+      "quoteTime": "2026-10-28T23:30:38+08:00"
     },
     {
       "name": "可口可乐",
       "code": "KO",
-      "price": 92.06,
-      "change": 0.88,
-      "changePct": 0.97,
+      "price": 92.19,
+      "change": 1.0,
+      "changePct": 1.1,
       "open": 90.84,
-      "high": 92.26,
+      "high": 92.36,
       "low": 90.58,
-      "volume": 3674417,
+      "volume": 4338843,
       "amount": 17962264.0,
       "trend": "盘中偏强",
       "risk": "强于指数",
-      "quoteTime": "2026-10-28T23:00:51+08:00"
+      "quoteTime": "2026-10-28T23:30:38+08:00"
     }
   ],
   "weather": {
@@ -133,7 +133,7 @@
     "condition": "阴",
     "temperature": 25,
     "humidity": 76,
-    "wind": "东风 13km/h"
+    "wind": "东风 12km/h"
   },
   "ui": {
     "eyebrow": "美股观察"
