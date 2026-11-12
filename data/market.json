@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T05:00:44+08:00",
+  "updatedAt": "2026-11-13T05:30:39+08:00",
   "source": {
     "market": "Sina Finance 美股 hq.sinajs.cn",
     "weather": "Open-Meteo"
@@ -7,17 +7,17 @@
   "index": {
     "name": "纳斯达克指数",
     "code": "IXIC",
-    "price": 25364.87,
-    "change": -101.32,
-    "changePct": -0.4,
+    "price": 25366.09,
+    "change": -100.1,
+    "changePct": -0.39,
     "open": 25092.11,
     "high": 25597.22,
     "low": 25068.28,
-    "volume": 7860193593,
+    "volume": 8705875273,
     "amount": 7720052795.0,
     "trend": "窄幅震荡",
     "risk": "观察",
-    "quoteTime": "2026-11-13T05:00:42+08:00",
+    "quoteTime": "2026-11-13T05:30:37+08:00",
     "volumeTone": "成交额约77亿",
     "series": [
       25338.27,
@@ -74,47 +74,47 @@
     {
       "name": "SPCX",
       "code": "SPCX",
-      "price": 139.9,
-      "change": 0.15,
-      "changePct": 0.11,
+      "price": 139.94,
+      "change": 0.19,
+      "changePct": 0.14,
       "open": 137.84,
       "high": 147.6,
       "low": 137.75,
-      "volume": 90939630,
+      "volume": 94664672,
       "amount": 107736573.0,
       "trend": "盘中偏强",
       "risk": "跟随指数",
-      "quoteTime": "2026-11-13T05:00:42+08:00"
+      "quoteTime": "2026-11-13T05:30:37+08:00"
     },
     {
       "name": "苹果",
       "code": "AAPL",
-      "price": 354.95,
-      "change": -0.41,
-      "changePct": -0.12,
+      "price": 354.88,
+      "change": -0.48,
+      "changePct": -0.14,
       "open": 357.81,
       "high": 359.37,
       "low": 354.41,
-      "volume": 24583349,
+      "volume": 30560048,
       "amount": 56132428.0,
       "trend": "盘中偏弱",
       "risk": "跟随指数",
-      "quoteTime": "2026-11-13T05:00:42+08:00"
+      "quoteTime": "2026-11-13T05:30:37+08:00"
     },
     {
       "name": "谷歌",
       "code": "GOOG",
-      "price": 295.39,
-      "change": 4.76,
-      "changePct": 1.64,
+      "price": 295.35,
+      "change": 4.72,
+      "changePct": 1.62,
       "open": 290.56,
       "high": 299.25,
       "low": 290.47,
-      "volume": 18230535,
+      "volume": 21691701,
       "amount": 34587636.0,
       "trend": "盘中偏强",
       "risk": "强于指数",
-      "quoteTime": "2026-11-13T05:00:42+08:00"
+      "quoteTime": "2026-11-13T05:30:37+08:00"
     },
     {
       "name": "特斯拉",
@@ -125,26 +125,26 @@
       "open": 386.36,
       "high": 401.22,
       "low": 385.2,
-      "volume": 27514541,
+      "volume": 28547159,
       "amount": 38680970.0,
       "trend": "盘中偏强",
       "risk": "强于指数",
-      "quoteTime": "2026-11-13T05:00:42+08:00"
+      "quoteTime": "2026-11-13T05:30:37+08:00"
     },
     {
       "name": "微软",
       "code": "MSFT",
-      "price": 522.95,
-      "change": 1.83,
-      "changePct": 0.35,
+      "price": 523.0,
+      "change": 1.88,
+      "changePct": 0.36,
       "open": 521.1,
       "high": 529.66,
       "low": 520.0,
-      "volume": 14175786,
+      "volume": 17858038,
       "amount": 33136557.0,
       "trend": "盘中偏强",
       "risk": "跟随指数",
-      "quoteTime": "2026-11-13T05:00:42+08:00"
+      "quoteTime": "2026-11-13T05:30:37+08:00"
     },
     {
       "name": "博通",
@@ -155,26 +155,26 @@
       "open": 356.8,
       "high": 369.82,
       "low": 354.72,
-      "volume": 38384681,
+      "volume": 43419248,
       "amount": 30009485.0,
       "trend": "盘中偏强",
       "risk": "强于指数",
-      "quoteTime": "2026-11-13T05:00:42+08:00"
+      "quoteTime": "2026-11-13T05:30:37+08:00"
     },
     {
       "name": "可口可乐",
       "code": "KO",
-      "price": 97.42,
-      "change": -0.15,
-      "changePct": -0.15,
+      "price": 97.44,
+      "change": -0.13,
+      "changePct": -0.13,
       "open": 98.25,
       "high": 98.38,
       "low": 97.38,
-      "volume": 10603162,
+      "volume": 13823580,
       "amount": 19837264.0,
       "trend": "盘中偏弱",
       "risk": "跟随指数",
-      "quoteTime": "2026-11-13T05:00:42+08:00"
+      "quoteTime": "2026-11-13T05:30:37+08:00"
     }
   ],
   "weather": {
