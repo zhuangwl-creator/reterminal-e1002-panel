@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T08:00:43+08:00",
+  "updatedAt": "2026-11-14T08:30:50+08:00",
   "source": {
     "market": "Sina Finance 美股 hq.sinajs.cn",
     "weather": "Open-Meteo"
@@ -17,7 +17,7 @@
     "amount": 8015187460.0,
     "trend": "指数偏弱",
     "risk": "观察",
-    "quoteTime": "2026-11-14T08:00:42+08:00",
+    "quoteTime": "2026-11-14T08:30:37+08:00",
     "volumeTone": "成交额约80亿",
     "series": [
       25136.77,
@@ -80,11 +80,11 @@
       "open": 140.17,
       "high": 142.24,
       "low": 136.64,
-      "volume": 77981232,
+      "volume": 78205486,
       "amount": 110496314.0,
       "trend": "盘中偏弱",
       "risk": "跟随指数",
-      "quoteTime": "2026-11-14T08:00:42+08:00"
+      "quoteTime": "2026-11-14T08:30:37+08:00"
     },
     {
       "name": "苹果",
@@ -95,11 +95,11 @@
       "open": 357.96,
       "high": 360.83,
       "low": 355.75,
-      "volume": 39995301,
+      "volume": 40013704,
       "amount": 55061708.0,
       "trend": "红盘震荡",
       "risk": "强于指数",
-      "quoteTime": "2026-11-14T08:00:42+08:00"
+      "quoteTime": "2026-11-14T08:30:37+08:00"
     },
     {
       "name": "谷歌",
@@ -110,11 +110,11 @@
       "open": 299.89,
       "high": 301.62,
       "low": 290.34,
-      "volume": 18497044,
+      "volume": 18507481,
       "amount": 27492881.0,
       "trend": "盘中偏弱",
       "risk": "跟随指数",
-      "quoteTime": "2026-11-14T08:00:42+08:00"
+      "quoteTime": "2026-11-14T08:30:37+08:00"
     },
     {
       "name": "特斯拉",
@@ -125,11 +125,11 @@
       "open": 401.68,
       "high": 404.4,
       "low": 385.83,
-      "volume": 32334303,
+      "volume": 32358366,
       "amount": 39313766.0,
       "trend": "盘中偏弱",
       "risk": "跟随指数",
-      "quoteTime": "2026-11-14T08:00:42+08:00"
+      "quoteTime": "2026-11-14T08:30:37+08:00"
     },
     {
       "name": "微软",
@@ -140,11 +140,11 @@
       "open": 519.75,
       "high": 526.42,
       "low": 513.82,
-      "volume": 26175073,
+      "volume": 26182651,
       "amount": 31067631.0,
       "trend": "盘中偏强",
       "risk": "强于指数",
-      "quoteTime": "2026-11-14T08:00:42+08:00"
+      "quoteTime": "2026-11-14T08:30:37+08:00"
     },
     {
       "name": "博通",
@@ -155,11 +155,11 @@
       "open": 356.54,
       "high": 358.47,
       "low": 337.67,
-      "volume": 31622192,
+      "volume": 31641896,
       "amount": 32681012.0,
       "trend": "盘中偏弱",
       "risk": "弱于指数",
-      "quoteTime": "2026-11-14T08:00:42+08:00"
+      "quoteTime": "2026-11-14T08:30:37+08:00"
     },
     {
       "name": "可口可乐",
@@ -170,19 +170,20 @@
       "open": 98.18,
       "high": 99.3,
       "low": 97.96,
-      "volume": 18031306,
+      "volume": 18034523,
       "amount": 19636986.0,
       "trend": "盘中偏强",
       "risk": "强于指数",
-      "quoteTime": "2026-11-14T08:00:42+08:00"
+      "quoteTime": "2026-11-14T08:30:37+08:00"
     }
   ],
   "weather": {
     "city": "深圳",
-    "condition": "阵雨",
-    "temperature": 23,
-    "humidity": 96,
-    "wind": "南风 14km/h"
+    "condition": "天气",
+    "temperature": 0,
+    "humidity": 0,
+    "wind": "待更新",
+    "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>"
   },
   "ui": {
     "eyebrow": "美股观察"
