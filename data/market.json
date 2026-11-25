@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T19:30:35+08:00",
+  "updatedAt": "2026-11-25T20:00:58+08:00",
   "source": {
     "market": "Sina Finance hq.sinajs.cn",
     "weather": "Open-Meteo"
@@ -100,10 +100,11 @@
   ],
   "weather": {
     "city": "深圳",
-    "condition": "阴",
-    "temperature": 15,
-    "humidity": 91,
-    "wind": "东北风 7km/h"
+    "condition": "天气",
+    "temperature": 0,
+    "humidity": 0,
+    "wind": "待更新",
+    "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>"
   },
   "ui": {
     "eyebrow": "A股观察"
